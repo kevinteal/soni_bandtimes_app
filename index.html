@@ -3,45 +3,194 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>jQuery Mobile: Theme Download</title>
+	<title>Sonisphere IV</title>
 	<link rel="stylesheet" href="themes/soni.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="jquery.mobile.structure-1.4.2.min.css" />
    <script src="jquery-1.11.1.js"></script>
    <script src="jqm/jquery.mobile-1.4.2.min.js"></script>
+   <script src="soni_script.js"></script>
 	
 
 </head>
 <body>
-	<div data-role="page" data-theme="a">
+	<div data-role="page" data-theme="a" id="one">
 		<div data-role="header" data-position="inline">
-			<h1>It Worked!</h1>
+          <a class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-calendar">My Plan
+</a>
+			<h1>Sonisphere IV</h1>
+            <a href="#two" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-bars" data-transition="slide">Line-up
+</a>
 		</div>
 		<div data-role="content" data-theme="a">
-			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
-			<pre>
-<strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;themes/soni.min.css&quot; /&gt;</strong>
-<strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;themes/jquery.mobile.icons.min.css&quot; /&gt;</strong>
-&lt;link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css&quot; /&gt;
-&lt;script src=&quot;http://code.jquery.com/jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js&quot;&gt;&lt;/script&gt;
-			</pre>
-			<p>This is content color swatch "A" and a preview of a <a href="#" class="ui-link">link</a>.</p>
-			<label for="slider1">Input slider:</label>
-			<input type="range" name="slider1" id="slider1" value="50" min="0" max="100" data-theme="a" />
-			<fieldset data-role="controlgroup"  data-type="horizontal" data-role="fieldcontain">
-			<legend>Cache settings:</legend>
-			<input type="radio" name="radio-choice-a1" id="radio-choice-a1" value="on" checked="checked" />
-			<label for="radio-choice-a1">On</label>
-			<input type="radio" name="radio-choice-a1" id="radio-choice-b1" value="off"  />
-			<label for="radio-choice-b1">Off</label>
-			</fieldset>
-		</div>
-	</div>
-</body>
-<script type="text/javascript">
-$(document).ready(function(e) {
+           
+            Main
+            <div class="now_playing_box">
+            
+            <div class="now_playing_section">Now: <span id="main_now_band">Metallica</span>
+            <br/>Finish: <span id="main_now_finish">10:00pm</span>
+            </div>
+            
+            <div class="now_playing_section">Next: <span id="main_next_band">Iron madien</span>
+            <br/>Set Time: <span id="main_next_start">12:00pm</span> - <span id="main_next_finish">13:00pm</span>
+            </div>
+            
+            </div>
+            
+            Second
+            <div class="now_playing_box">
+            
+            <div class="now_playing_section">Now: <span id="second_now_band">Slayer</span>
+            <br/>Finish: <span id="second_now_finish">09:00pm</span>
+            </div>
+            
+            <div class="now_playing_section">Next: <span id="second_next_band">Anthrax</span>
+            <br/>Set Time: <span id="second_next_start">11:00pm</span> - <span id="second_next_finish">12:00pm</span>
+            </div>
+            
+            </div>
+            
+            bohemia
+            <div class="now_playing_box">
+            
+            <div class="now_playing_section">Now: <span id="bohemia_now_band">Alestorm</span>
+            <br/>Finish: <span id="bohemia_now_finish">14:00pm</span>
+            </div>
+            
+            <div class="now_playing_section">Next: <span id="bohemia_next_band">All that remain</span>
+            <br/>Set Time: <span id="bohemia_next_start">15:00pm</span> - <span id="bohemia_next_finish">17:00pm</span>
+            </div>
+            
+            </div>
+            
+            red bull
+            <div class="now_playing_box">
+           
+            <div class="now_playing_section">Now: <span id="redbull_now_band">Don Broco</span>
+            <br/>Finish: <span id="redbull_now_finish">16:00pm</span>
+            </div>
+            
+            <div class="now_playing_section">Next: <span id="redbull_next_band">Slipknot</span>
+            <br/>Set Time: <span id="redbull_next_start">17:00pm</span> - <span id="redbull_next_finish">19:00pm</span>
+            </div>
+           
+            </div>
+            
+            jager
+            <div class="now_playing_box">
+            
+            <div class="now_playing_section">Now: <span id="jager_now_band">Turbowolf</span>
+            <br/>Finish: <span id="jager_now_finish">12:00pm</span>
+            </div>
+            
+            <div class="now_playing_section">Next: <span id="jager_next_band">The Computers</span>
+            <br/>Set Time: <span id="jager_next_start">17:00pm</span> - <span id="jager_next_finish">19:00pm</span>
+            </div>
+            
+            </div>
+            
+		</div><!-- content -->
+	</div><!-- page -->
     
-});
-</script>
+    
+    
+    
+<!-- Start of second page: #two -->
+<div data-role="page" id="two" data-theme="a">
+
+	<div data-role="header" data-add-back-btn="true">
+        <h1 id="stage_name_heading">Main Stage</h1>
+        <a href="#stage_panel" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-bars">Stages</a>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="a">
+    
+    <div data-role="tabs" id="tabs">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#tab_one" class="ui-btn-active" data-ajax="false">Friday</a></li>
+          <li><a href="#tab_two" data-ajax="false">Saturday</a></li>
+          <li><a href="#tab_three" data-ajax="false">Sunday</a></li>
+        </ul>
+      </div>
+      <div id="tab_one" class="ui-body-d ui-content">
+        <!-- TAB ONE -->
+        <div class="lineup_band" ><strong>Metallica</strong><br/><span class="darker_text">9:00pm - 11:00pm</span><br/>
+        <form>
+            <select name="flip1" id="flip1" data-role="flipswitch" data-mini="true" data-theme="c" onChange="add_to_plan(this,'bandid')"  >
+                <option value="off">Off</option>
+                <option value="on">On</option>
+            </select>
+        </form>
+        </div>
+        
+        <div class="lineup_band"  ><strong>Iron Maiden</strong><br/><span class="darker_text">7:00pm - 8:00pm</span><br/>
+        <form>
+            <select name="flip2" id="flip2" data-role="flipswitch" data-mini="true" data-theme="c" onChange="add_to_plan(this,'bandid')"  >
+                <option value="off">Off</option>
+                <option value="on" selected>On</option>
+            </select>
+        </form>
+        </div>
+        
+        <div class="lineup_band" ><strong>Slipkot</strong><br/><span class="darker_text">5:00pm - 6:00pm</span><br/>
+        <form>
+            <select name="flip3" id="flip3" data-role="flipswitch" data-mini="true" data-theme="c" onChange="add_to_plan(this,'bandid')"  >
+                <option value="off">Off</option>
+                <option value="on" selected>On</option>
+            </select>
+        </form>
+        </div>
+        
+        <div class="lineup_band" ><strong>Turbowolf</strong><br/><span class="darker_text">3:00pm - 4:00pm</span><br/>
+        <form>
+            <select name="flip4" id="flip4" data-role="flipswitch" data-mini="true" data-theme="c" onChange="add_to_plan(this,'bandid')"  >
+                <option value="off">Off</option>
+                <option value="on" selected>On</option>
+            </select>
+        </form>
+        </div>
+        
+        <div class="lineup_band" ><strong>Pull Apart By Horses</strong><br/><span class="darker_text">2:00pm - 2:30pm</span> <br/>
+        <form>
+            <select name="flip5" id="flip5" data-role="flipswitch" data-mini="true" data-theme="c" onChange="add_to_plan(this,'bandid')"  >
+                <option value="off" selected>Off</option>
+                <option value="on">On</option>
+            </select>
+        </form>
+        </div>
+        
+      </div>
+      <div id="tab_two" class="ui-body-d ui-content">
+        <!-- TAB TWO -->
+        
+      </div>
+      <div id="tab_three" class="ui-body-d ui-content">
+      <!-- TAB THREE -->
+      
+      </div>
+    </div>
+    
+	</div><!-- /content -->
+     
+	<div data-role="panel" data-position="right" data-position-fixed="false" data-display="overlay" id="stage_panel" data-theme="b">
+					<!-- panel content goes here -->
+                   <center> <h4 >Select Stage</h4></center>
+    <ul data-role="listview" >
+        <li><a onClick="change_stage(1)">Main Stage</a></li>
+        <li><a onClick="change_stage(2)">Second</a></li>
+        <li><a onClick="change_stage(3)">Bohemia</a></li>
+        <li><a onClick="change_stage(4)">Red Bull</a></li>
+        <li><a onClick="change_stage(5)">Jager</a></li>
+    </ul>
+	</div><!-- /panel -->
+
+</div><!-- /page two -->
+    
+    
+    
+    
+    
+</body>
 
 </html>

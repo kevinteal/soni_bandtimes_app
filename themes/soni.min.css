@@ -13,9 +13,45 @@
 /* Globals */
 /* Font
 -----------------------------------------------------------------------------------------------------------*/
+.now_playing_box{
+	border:1px #80FF00 solid;
+	padding:5px 2px;
+	width:90%;
+	margin:15px auto;
+	height:100px;
+}
+.now_playing_section{
+	height:50px;
+	width:90%;
+	margin:0 auto;
+	color:#999;
+}
+
+.now_playing_section span{
+	font-size:1.2em;
+	color:#fff;
+}
+
+.lineup_band{
+	border:1px #80FF00 solid;
+	padding:5px 2px;
+	width:90%;
+	margin:15px auto;
+	height:75px;
+	text-align:center;
+	font-size:1.2em;
+}
+.darker_text{
+	color:#999;
+}
+#two,#one{
+	background-color:#303c41;
+}
+
 html {
 	font-size: 100%;
 }
+
 body,
 input,
 select,
