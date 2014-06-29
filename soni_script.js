@@ -1,7 +1,12 @@
 // JavaScript Document
 $(document).ready(function(e) {
     console.log("ready!");
+	//setup database if it does not exist
+	//if it exists then check date with todays date
+	//if date is not a soni date then show message saying when festival starts bands will appear here
+	set_up_soni_db();
 });
+
 
 function add_to_plan(e,b_id){
 var d=	$(e).val();
@@ -41,28 +46,29 @@ function change_stage(stage){
 	$("#tab_one,#tab_two,#tab_three").empty();
 	//add new content to all tabs
 	//execute query for stage, order bands into day and desc time
-var name ="notsaturn";
-	if(stage_name=="Saturn"){
-		name="kevin";
-	}
+
 	
 	//friday
 	for(var i=0;i<10;i++){
-	$("#tab_one").append("<div class='lineup_band' ><strong>BAND NAME"+i+name+"</strong>"+
+		var id = "flip"+i;
+		var band_id = "band_id"+i;
+		
+	$("#tab_one").append("<div class='lineup_band' ><strong>BAND NAME"+i+stage_name+"</strong>"+
 	"<br/><span class='darker_text'>START TIME - END TIME</span><br/>"+
-	"<form><select name='flip"+i+"' id='flip"+i+"' data-role='flipswitch' data-mini='true' data-theme='c' onChange='add_to_plan(this,'bandid"+i+"')'><option value='off'>Off</option> <option value='on'>On</option></select></form> </div>");
+	"<form><select name='"+id+"' id='"+id+"' data-role='flipswitch' data-mini='true' data-theme='c' onChange='add_to_plan(this,'band')'><option value='off'>Off</option> <option value='on'>On</option></select></form> </div>");
+	
 	}
 	//saturday
 	for(var ii=0;ii<10;ii++){
-	$("#tab_two").append("<div class='lineup_band' ><strong>BAND NAME"+ii+name+"</strong>"+
+	$("#tab_two").append("<div class='lineup_band' ><strong>BAND NAME"+ii+stage_name+"</strong>"+
 	"<br/><span class='darker_text'>START TIME - END TIME</span><br/>"+
-	"<form><select name='flip"+ii+"' id='flip"+ii+"' data-role='flipswitch' data-mini='true' data-theme='c' onChange='add_to_plan(this,'bandid"+ii+"')'><option value='off'>Off</option> <option value='on'>On</option></select></form> </div>");
+	"<form><select name='flip'"+ii+" id='flip'"+ii+" data-role='flipswitch' data-mini='true' data-theme='c' onChange='add_to_plan(this,'bandid'"+ii+")'><option value='off'>Off</option> <option value='on'>On</option></select></form> </div>");
 	}
 	//sunday
 	for(var iii=0;iii<10;iii++){
-	$("#tab_three").append("<div class='lineup_band' ><strong>BAND NAME"+iii+name+"</strong>"+
+	$("#tab_three").append("<div class='lineup_band' ><strong>BAND NAME"+iii+stage_name+"</strong>"+
 	"<br/><span class='darker_text'>START TIME - END TIME</span><br/>"+
-	"<form><select name='flip"+iii+"' id='flip"+iii+"' data-role='flipswitch' data-mini='true' data-theme='c' onChange='add_to_plan(this,'bandid"+iii+"')'><option value='off'>Off</option> <option value='on'>On</option></select></form> </div>");
+	"<form><select name='flip'"+iii+" id='flip'"+iii+" data-role='flipswitch' data-mini='true' data-theme='c' onChange='add_to_plan(this,'bandid'"+iii+")'><option value='off'>Off</option> <option value='on'>On</option></select></form> </div>");
 	}
 	
 	
